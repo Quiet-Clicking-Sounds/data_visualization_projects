@@ -81,14 +81,14 @@ def get_song_path_generator(p: Path):
                 yield par
 
 
-def plotter(songs: list[Song]):
+def plotter(song_instances: list[Song]):
     # groups for
     unique_words = []
     total_words = []
     minimum_interesting_unique = 400
     minimum_interesting_total = 1000
     named_items = []
-    for s in songs:
+    for s in song_instances:
         u_words = s.total_unique_words_in_lyrics()
         t_words = s.total_words_in_lyrics()
         if u_words < 0 or t_words < 0:
