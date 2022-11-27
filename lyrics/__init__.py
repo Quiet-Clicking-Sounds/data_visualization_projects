@@ -144,14 +144,11 @@ def plotter(songs: list[Song]):
 
 
 if __name__ == '__main__':
-    t0 = time.time_ns()
     songs = []
     for tar in get_song_path_generator(PathArtists):
         try:
             songs.append(Song(tar))
         except Exception:
+            # Need to create a useful exception clause for when one of these need binning
             pass
     plotter(songs)
-    t1 = time.time_ns() - t0
-    print(list(all_characters_set))
-    print(f"Time Taken: {t1 / 1000000:,.3f}ms")
